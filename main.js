@@ -16,7 +16,16 @@ const grid = new Muuri('.grid', {
 
 /* Este es el cógigo que se va a ejecutar cuando la ventana
 del index cargue completamente */
-wiindow.addEventListener('load', () => {
+/* Esta función es el complemento del estilo css 
+de .grid.imagenes-cargadas */
+window.addEventListener('load', () => {
+    /* Este refresh se usa para el momento de cambiar el tamaño 
+    de la pantalla (achicarla) porque Muuri necesita recalcular
+    la distribución y el tamaño de los elementos de acuerdo 
+    al nuevo tamaño */ 
+    grid.refreshItems().layout();
+    /* Aquí se conecta con las imagenes-cargadas que están en los
+    estilos CSS */
     document.getElementById('grid').classList.add('imagenes-cargadas');
 });
 
