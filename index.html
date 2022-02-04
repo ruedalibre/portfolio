@@ -16,7 +16,7 @@
         los elementos queden organizados en su interior -->
         <header>
             <div class="logo">
-                <h1>Andrés Pérez Díaz</h1>
+                <h1>Andrés Ruedalibre</h1>
                 <p>Master in Anthropology | Data Scientist | Full Stack Developer</p>
             </div>
             <form action="">
@@ -48,21 +48,48 @@
         <!-- Las imagenes deben ir dentro de un contenedor tipo grid y 
         cada imagen sera un item del grid -->
         <section class="grid" id="grid">
-            <div class="item">
+            <!-- data-categoria es un atributo personalizado que es posible en HTML5
+            Permite crear atributos usando el prefijo data- -->
+            <!-- Las etiquetas con los términos de búsqueda que podrán utilizar 
+            los usuarios para filtrar en la barra de búsqueda -->
+            <div class="item" 
+                data-categoria="data-science" 
+                data-etiquetas="data_science desarrollo AI" 
+                data-descripcion="1. Proyectos de Data Science e Inteligencia Artificial">
                 <div class="item-contenido">
                     <img src="images/data_science.png" alt="data_science">
                 </div>
             </div>
-
-            <div class="item">
+            <div class="item" 
+                data-categoria="mobile-dev" 
+                data-etiquetas="react mobile development api-rest responsive" 
+                data-descripcion="1. Proyectos mobile development">
                 <div class="item-contenido">
-                    <img src="images/mobile.png" alt="data_science">
+                    <img src="images/mobile.png" alt="mobile-dev">
                 </div>
             </div>
-
-            <div class="item">
+            <div class="item" 
+                data-categoria="web-deb" 
+                data-etiquetas="web development api-rest responsive" 
+                data-descripcion="1. Proyectos de Data Science e Inteligencia Artificial">
                 <div class="item-contenido">
-                    <img src="images/web.png" alt="data_science">
+                    <img src="images/web.png" alt="web-dev">
+                </div>
+            </div>
+            <div class="item" 
+                data-categoria="image-gallery" 
+                data-etiquetas="photography images travel" 
+                data-descripcion="1. Trabajos fotográficos amateur">
+                <div class="item-contenido">
+                    <img src="images/image_gallery.png" alt="web-dev">
+                </div>
+            </div>
+            <div class="item" 
+                data-categoria="blog" 
+                data-etiquetas="blog opinion writing" 
+                data-descripcion="1. Mis columnas de opinión sobre temas diversos">
+                <div class="item-contenido">
+                    <img src="images/blog.png" alt="web-dev">
                 </div>
             </div>
 
