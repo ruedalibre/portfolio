@@ -27,6 +27,23 @@ window.addEventListener('load', () => {
     /* Aquí se conecta con las imagenes-cargadas que están en los
     estilos CSS */
     document.getElementById('grid').classList.add('imagenes-cargadas');
+
+    /* Se crea una variable para guardar todos los enlaces y poder 
+    acceder a cada una de las categorías al realizar las búsquedas:*/
+    const enlaces = document.querySelectorAll("#categorias a");
+    enlaces.forEach((elemento) => {
+        /* Este código se encarga de quitarle el estado activo 
+        a la categoría por defecto (All) y se lo traspasa a la 
+        categoría sobre la cual el usuario haga click*/
+        elemento.addEventListener('click', (evento) => {
+            /* Es necesario añadir esta línea para evitar el 
+            comportamiento por defecto del navegador */ 
+            evento.preventDefault();
+            /* Esta línea hace que, al dar click sobre una de
+            las categorías, esta quede activa automáticamente */
+            evento.target.classList.add('activo');
+        });
+    }); 
 });
 
 
