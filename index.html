@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,500&family=Martel:wght@200&family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>PORTFOLIO ANDRES PEREZ DIAZ | Data Scientist & Full Stack Developer</title>
+</head>
+<body>
+    <div class="contenedor">
+        <!-- Este es el contenedor general para que todos 
+        los elementos queden organizados en su interior -->
+        <header>
+            <div class="logo">
+                <h1>Andrés Pérez Díaz</h1>
+                <p>Master in Anthropology | Data Scientist | Full Stack Developer</p>
+            </div>
+            <form action="">
+                <!-- Esta es la barra de búsqueda para que 
+                el visitante pueda filtrar la información 
+                que desee ver -->
+                <input type="text" class="barra-busqueda" 
+                id="barra-busqueda" placeholder="Buscar">
+            </form>
+            <div class="categorias" id="categorias">
+                <!-- Este es el menú de categorías, consiste
+                básicamente en textos que tienen enlaces a las
+                diferentes páginas de los proyectos. 
+                -->
+                <!-- Debe haber una de las categorías que sea 
+                la que esté activa cuando se carga el index. 
+                Por eso lleva una clase que lo identifica.  -->
+                <a href="#" class="activo">All</a>
+                <a href="#">Data Science</a>
+                <a href="#">Mobile Dev</a>
+                <a href="#">Web Dev</a>
+                <a href="#">Image Gallery</a>
+                <a href="#">Blog</a>
+            </div>
+        </header>
+
+        <!-- En esta sección van a quedar organizadas todas las imagenes que 
+        representan a todas las categorías de la web  -->
+        <section class="grid">
+            <div class="item">
+                <div class="item-contenido">
+                    <img src="images/data_science.png" alt="data_science">
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+     <!-- Estas son las librerías de MUURI que controlan las animaciones de 
+    la grilla que organiza los elementos -->
+    <!-- NOTA: el orden es importante, primero se debe insertar el link de las animaciones
+    y después el de la librería como tal -->
+    <script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <!-- NOTA SOBRE MUURI: Esta librería exige sus propios estilos CSS que están en la página 
+    de la aplicación. Tenerlo en cuenta para futuros proyectos. -->
+    <script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+    <!-- Acá creo el archivo Javascript con el que se va a programar la web -->
+    <script src="main.js"></script>
+</body>
+</html>
