@@ -1,0 +1,124 @@
+/* FUENTES ELEGIDAS
+
+font-family: 'Exo', sans-serif;
+font-family: 'Martel', serif;
+font-family: 'Nunito', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f3f3;
+    font-family: 'Martel', serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contenedor {
+    width: 90%;
+    /* Aquí establezo el ancho máximo de la página */
+    max-width: 800px;
+    /* Con margin auto, el contenedor principal 
+    de la página va a estar siempre centrado */
+    margin: auto;
+}
+
+/* -------------------------------------------
+                    HEADER 
+----------------------------------------------*/
+
+header {
+    /* De esta manera deja un padding superio e inferior 
+    de 40 pixeles */
+    padding: 40px 0;
+}
+
+header .logo {
+    /* Estilos del título y subtítulo de la página */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header .logo p {
+    /* Estilos específicos del subtítulo */
+    color: #9b9b9b;
+}
+header form {
+    width: 100%;
+    /* Uso display flex para organizar los 
+    elementos internos de los contenedores */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+header .barra-busqueda {
+    /* Estilos de la barra del input (barra de búsqueda) */
+    width: 70%;
+    height: 40px;
+    /* Para centrar el texto dentro del input */
+    line-height: 40px;
+    background: white;
+    /* Cuando se ponene solo dos medidas, css asume
+    que la primera es up and bottom y la segunda es
+    para los lados */
+    padding: 0 20px;
+    /* Redondea los lados del field del input para que 
+    queden como media circunferencia */
+    border-radius: 100px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+header .categorias {
+    /* Uso de flexbox para organizar los nombres 
+    de las categorías */
+    display: flex;
+    /* Centrar todos los elementos de las categorías */
+    justify-content: center;
+    /* Flex wrap apila los elementos a medida que la 
+    pantalla se va achicando */
+    flex-wrap: wrap;
+}
+
+header .categorias a {
+    /* Estilos de los textos de las categorías */
+    color: #9b9b9b;
+    margin: 10px 20px;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+header .categorias a.activo {
+    /* Estilo del texto de la categoría que 
+    está activa por defecto al abrir el index */
+    color: #000;
+}
+
+/* -------------------------------------------
+                    GRID 
+----------------------------------------------*/
+
+.grid {
+    position: relative;
+    width: 100%;
+    /*  */
+    /*  */
+}
+
+.grid .item {
+    /* Para trabajar con la librería de Muuri
+    se necesita que la posición sea absoluta */
+    position: absolute;
+}
+
+
+
+
