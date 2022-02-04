@@ -102,6 +102,10 @@ header .categorias a.activo {
     color: #000;
 }
 
+#nombre {
+    font-family: 'Exo', sans-serif;
+}
+
 /* -------------------------------------------
                     GRID 
 ----------------------------------------------*/
