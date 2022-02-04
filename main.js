@@ -13,3 +13,16 @@ const grid = new Muuri('.grid', {
         rounding: false
     }
 });
+
+/* Este es el cógigo que se va a ejecutar cuando la ventana
+del index cargue completamente */
+wiindow.addEventListener('load', () => {
+    document.getElementById('grid').classList.add('imagenes-cargadas');
+});
+
+
+
+
+
+
+

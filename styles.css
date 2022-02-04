@@ -108,16 +108,61 @@ header .categorias a.activo {
 
 .grid {
     position: relative;
+    /* Para que abarque la totalidad del espacio 
+    del contenedor previamente creado */
     width: 100%;
-    /*  */
-    /*  */
+    /* Esta configuración se incluye para que todas
+    las imagenes carguen al mismo tiempo y no una tras
+    otra, dando un mejor efecto visual */
+    /* Opacity cero hace que al inicio el espacio 
+    donde van las imagenes se vea vacío y luego va a 
+    cargar las imagenes con un delay (transición)  */
+    opacity: 0;
+    transition: opacity 0.5s linear 1s;
+}
+
+.grid.imagenes-cargadas {
+    opacity: 1;
 }
 
 .grid .item {
     /* Para trabajar con la librería de Muuri
-    se necesita que la posición sea absoluta */
+    se necesita que la posición sea absoluta. 
+    Esta es una condición propia de la librería
+    para trabajar correctamente con su algoritmo
+    que calcula cómo reorganiza las imagenes en modo
+    responsive y al hacer click sobre los elementos */
     position: absolute;
+    display: block;
+    padding: 0;
+    margin: 10px;
+    /* De esta manera el espacio queda dividido en 3 partes
+    iguales en sentido vertical */
+    /* Es necesario restar los pixeles del margin que 
+    quedan a lado y lado de la imagen, porque de otra manera 
+    se dañaría la disposición de los elementos y la tercera 
+    imagen se pasaría hacia abajo al no caber completa */
+    width: calc(33.333333% - 20px);
 }
+
+.grid .item-contenido {
+    position: relative;
+}
+
+.grid .item img {
+    /*  Para que la imagen abarque el espacio 
+    completo que le fue asignado anteriormente */
+    width: 100%;
+    /* Para que el cursor cambie a una manito al pasarlo 
+    por encima de la imagen */
+    cursor: pointer;
+    vertical-align: top;
+}
+
+
+
+
+
 
 
 
