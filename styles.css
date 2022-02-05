@@ -217,6 +217,28 @@ header .categorias a.activo {
 
 }
 
+.contenedor-img {
+    position: relative;
+}
+
+.overlay #btn-cerrar-popup {
+    /* Le puedo quitar el background al 
+    botón para dejar solo la silueta png */
+    background: none;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    /* Para que cambién la apariencia del puntero 
+    al posarlo sobre el botón de cerrar */
+    cursor: pointer;
+    /* Esto ubica el botón dentro del contenedor */
+    position: absolute;
+    /* Para ubicar el botón arriaba hacia la derecha y 
+    por fuera de la imagen*/
+    right: -20px;
+    top: -20px;
+
+}
 
 
 
