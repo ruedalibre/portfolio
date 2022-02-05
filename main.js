@@ -74,8 +74,8 @@ window.addEventListener('load', () => {
     }); 
 
     /* 
-    EN ESTA SECCIÓN VA EL CÓDIGO PARA REALIZAR EL FILTRADO 
-    A TRAVÉS DE LA BARRA DE BÚSQUEDA
+    CÓDIGO PARA REALIZAR EL FILTRADO A TRAVÉS DE 
+    LA BARRA DE BÚSQUEDA
     */
 
     /* Lo primero que debo hacer es acceder a la barra de 
@@ -93,8 +93,9 @@ window.addEventListener('load', () => {
             grid.filter((item) => item.getElement().dataset.etiquetas.includes(busqueda));
         });
 
-         /* 
-    SECCIÓN PARA AGREGAR UN LISTENER PARA LAS IMAGENES
+    /* 
+    SECCIÓN PARA AGREGAR UN EVENT LISTENER PARA ABRIR LAS IMAGENES
+    AL HACER CLICK SOBRE ELLAS JUNTO CON SU RESPECTIVA DESCRIPCION
     */
     const overlay = document.getElementById('overlay');
     /* Para mostrar las imagenes overlay al presionar cualquiera 
@@ -102,27 +103,50 @@ window.addEventListener('load', () => {
     imagenes que están dentro de la clase item y que a su vez 
     están dentro de la clase grid */
     document.querySelectorAll('.grid .item img').forEach((elemento) => {
-        /* Debo primero obtener la ruta de cada elemento (imagen), y 
-        esta ruta se encuentra en la fuente (source) de la imagen*/
-        const ruta = elemento.getAttribute('src');
-        /* Ahora quiero acceder a la descripción de la imagen. Sin embargo, 
-        dado que la descripción está por fuera de la imagen, debo 
-        indicar la ruta adecuada, accediendo al padre del texto de la 
-        descripción. Es como devolver el hilo y luego entrar a buscar 
-        el dato de la descripcion */
-        const descripcion = elemento.parentNode.parentNode.dataset.descripcion;
         /* Esta línea es la que ejecuta la acción cuando el usuario hace
         click sobre la imagen */
         elemento.addEventListener('click', () => {
+            /* Debo primero obtener la ruta de cada elemento (imagen), y 
+            esta ruta se encuentra en la fuente (source) de la imagen*/
+            const ruta = elemento.getAttribute('src');
+            /* Ahora quiero acceder a la descripción de la imagen. Sin embargo, 
+            dado que la descripción está por fuera de la imagen, debo 
+            indicar la ruta adecuada, accediendo al padre del texto de la 
+            descripción. Es como devolver el hilo y luego entrar a buscar 
+            el dato de la descripcion */
+            const descripcion = elemento.parentNode.parentNode.dataset.descripcion;
             overlay.classList.add('activo');
             /* Para no quemar las imagenes sino que se muestre en 
             overlay la imagen seleccionada, hay que indicarle la 
             ruta previamente guardada en dicha variable*/
             document.querySelector('#overlay img').src = ruta;
+            // Hago lo mismo para obtener la descripción
             document.querySelector('#overlay .descripcion').innerHTML = descripcion;
         });
-        
     });
+    /* 
+    AGREGAR ACCION EVENT LISTENER AL BOTÓN DE 
+    CERRAR IMAGEN EN OVERLAY
+    */
+    /* Al acceder al botón y sus clases desactivo el estado activo para 
+    que la imagen se cierre*/
+    document.querySelector('#btn-cerrar-popup').addEventListener('click', () => {
+        overlay.classList.remove('activo');
+    });
+
+    /* 
+    AGREGAR ACCION EVENT LISTENER PARA CERRAR IMAGEN 
+    AL HACER CLICK POR FUERA DEL OVERLAY
+    */
+   overlay.addEventListener('click', (evento) => {
+        // overlay.classList.remove('activo');
+        /* Crea un condicional para que, al tener abierta la imagen del 
+        overlay, revise si la parte donde está haciendo click está por 
+        fuera de la imagen y la descripción, y en este caso la imagen se 
+        cerrará. Pero si el usuario hace click sobre la imagen o la 
+        descripción, la imagen overlay no se cerrará */
+        evento.target.id === 'overlay' ? overlay.classList.remove('activo') : '';
+   });
 
 });
 
