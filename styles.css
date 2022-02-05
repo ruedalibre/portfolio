@@ -163,9 +163,59 @@ header .categorias a.activo {
     vertical-align: top;
 }
 
+/* -------------------------------------------
+        OVERLAY (IMAGEN EN DETALLE) 
+----------------------------------------------*/
 
+.overlay {
+    /* De este modo la imagen quedará fija 
+    en el centro de la pantalla y no se moverá 
+    con el scroll del mouse o el dedo */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* El fondo detrás de la imagen quedará de color 
+    negro pero con un factor alpha que le de transparencia */
+    background: rgba(0,0,0,.9);
+    /* Para que la imagen abarque el 100% del ancho 
+    del dispositivo */
+    width: 100%;
+    /* Este abarca el 100% del viewport height */
+    height: 100vh;
+    /* Por defecto no debe mostrar la imagen, solo tomará el 
+    efecto flex y se verá la imagen al hacer click en una de 
+    la imagenes */
+    display: none;
+    /* Alinea de en sentido vertical */
+    align-items: center;
+    /* Alinea de en sentido horizontal */
+    justify-content: center;
+    /* Coloca los elementos uno encima del otro, en columna */
+    flex-direction: column;
+}
 
+.overlay.activo {
+    /* Esto hará que se muestre la imagen activa en el momento */
+    display: flex;
+}
 
+.overlay imag {
+    /* Para que tome una medidad del ancho máximo del contenedor */
+    max-width: 100%;
+}
+
+.overlay .descripcion {
+    display: block;
+    background: #ffff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 10px;
+    max-width: 50%;
+
+}
 
 
 

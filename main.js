@@ -84,13 +84,14 @@ window.addEventListener('load', () => {
     document.querySelector('#barra-busqueda')
         .addEventListener('input', (evento) => {
             const busqueda = evento.target.value;
-            /* Esta línea se encarga de revisar la coincidencia 
+            /* Esta función se encarga de revisar la coincidencia 
             entre los caracteres ingresados por el usuario y las 
-            etiquetas existentes en cada categoría*/
+            etiquetas existentes en cada categoría. Este proceso 
+            lo realiza en tiempo real, lo cual hace que las imagenes
+            vayan apareciendo automáticamente a medida que el 
+            usuario está escribiendo*/
             grid.filter((item) => item.getElement().dataset.etiquetas.includes(busqueda));
         });
-
-
 });
 
 
