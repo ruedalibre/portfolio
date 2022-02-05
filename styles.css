@@ -233,11 +233,110 @@ header .categorias a.activo {
     cursor: pointer;
     /* Esto ubica el botón dentro del contenedor */
     position: absolute;
-    /* Para ubicar el botón arriaba hacia la derecha y 
-    por fuera de la imagen*/
+    /* Para ubicar el botón arriba hacia la derecha y 
+    por fuera de la imagen (por fuera del contenedor)*/
     right: -20px;
     top: -20px;
+}
 
+/* -------------------------------------------
+        ESTILOS PARA EL FOOTER 
+----------------------------------------------*/
+
+footer .redes-sociales {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 20px;
+    /* Para que los iconos se acomoden 
+    debajo de los otros cuando el tamaño
+    de pantalla sea muy pequeño */
+    flex-wrap: wrap;
+}
+
+footer .redes-sociales a {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    color: #fff;
+    margin: 20px;
+    text-align: center;
+    /* Para que el fondo del ícono se vea 
+    de forma circular */
+    border-radius: 100px;
+    /* Incluye transición de 3 seg */
+    transition: .3s ease all;
+}
+
+footer .redes-sociales a i {
+    font-size: 25px;
+    /* Esta medida debe corresponder 
+    con la del height del bloque anterior */
+    line-height: 60px;
+}
+
+
+/* Asignación de color para los íconos de redes sociales */
+footer .redes-sociales .twitter {
+    background: #1da1f2;
+}
+
+footer .redes-sociales .github {
+    background: #211F1F;
+}
+
+footer .redes-sociales .linkedin {
+    background: #0072b1;
+}
+
+/* ANIMACIÓN DEL LOGO GIRATORIO 
+Se activa cuando el usuario pase el mouse 
+sobre el icono  */
+
+footer .contenedor-icono:hover a {
+    animation: icono .5s ease;
+}
+
+@keyframes icono {
+    from {
+        transform: rotate3d(0,0,0,0);
+    }
+    to {
+        /* El sentido de la rotación se establece 
+        con los 3 ejes (y,x,z) y la cantidad de giros
+        se ajusta en grados (degrees) */
+        transform: rotate3d(0,1,0, 360deg);
+    }
+}
+
+footer .creado-por {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #0072b1;
+}
+
+footer .creado-por a {color: #000;}
+/* Para que se vea una línea debajo del texto
+indicando que es un link a posar el mouse encima */
+footer .creado-por a:hover {text-decoration: underline}
+
+/* DISEÑO RESPONSIVE USANDO MEDIA QUERIES (@) */
+
+@media screen and (max-width: 700px) {
+    .grid .item {
+        /* Aquí quiero que, cuando las pantallas 
+        sean muy pequeñas, el algoritmo sea 
+        recalculado para tener 2 columnas de 
+        imágenes en vez de las 3 por defecto  */
+        width: calc(50% - 20px);
+    }
+    /* Ampliar tamaño de la barrá de búsqueda
+    a un 100% cuando se abra en mobile */
+    header .barra-busqueda {
+        width: 100%;
+    }
 }
 
 
