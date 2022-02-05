@@ -92,6 +92,38 @@ window.addEventListener('load', () => {
             usuario está escribiendo*/
             grid.filter((item) => item.getElement().dataset.etiquetas.includes(busqueda));
         });
+
+         /* 
+    SECCIÓN PARA AGREGAR UN LISTENER PARA LAS IMAGENES
+    */
+    const overlay = document.getElementById('overlay');
+    /* Para mostrar las imagenes overlay al presionar cualquiera 
+    de las imagenes del index. Para esto debo acceder a todaas las 
+    imagenes que están dentro de la clase item y que a su vez 
+    están dentro de la clase grid */
+    document.querySelectorAll('.grid .item img').forEach((elemento) => {
+        /* Debo primero obtener la ruta de cada elemento (imagen), y 
+        esta ruta se encuentra en la fuente (source) de la imagen*/
+        const ruta = elemento.getAttribute('src');
+        /* Ahora quiero acceder a la descripción de la imagen. Sin embargo, 
+        dado que la descripción está por fuera de la imagen, debo 
+        indicar la ruta adecuada, accediendo al padre del texto de la 
+        descripción. Es como devolver el hilo y luego entrar a buscar 
+        el dato de la descripcion */
+        const descripcion = elemento.parentNode.parentNode.dataset.descripcion;
+        /* Esta línea es la que ejecuta la acción cuando el usuario hace
+        click sobre la imagen */
+        elemento.addEventListener('click', () => {
+            overlay.classList.add('activo');
+            /* Para no quemar las imagenes sino que se muestre en 
+            overlay la imagen seleccionada, hay que indicarle la 
+            ruta previamente guardada en dicha variable*/
+            document.querySelector('#overlay img').src = ruta;
+            document.querySelector('#overlay .descripcion').innerHTML = descripcion;
+        });
+        
+    });
+
 });
 
 

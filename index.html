@@ -7,6 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,500&family=Martel:wght@200&family=Nunito&display=swap" rel="stylesheet">
+    <!-- FONT AWESOME  es un repositorio de iconos para incrutar en las páginas web
+        La etiqueta de FONT AWESOME debe ir antes de los estilos CSS -->
+    <script src="https://kit.fontawesome.com/2908e4e466.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>PORTFOLIO ANDRES PEREZ DIAZ | Data Scientist & Full Stack Developer</title>
 </head>
@@ -106,10 +109,13 @@
 
         <!-- ESTA ES LA SECCIÓN QUE VA A MOSTRAR LA IMAGEN EN DETALLE (OVERLAY) 
             CON SU RESPECTIVA DESCRIPCIÓN  -->
-        <section class="overlay activo" id="overlay">
+        <section class="overlay" id="overlay">
             <div class="contenedor-img">
-                <button>x</button>
-                <img src="./images/data_science.png" alt="data-science-detail">
+                <!-- Le asigno una clase al botón de cerrar para darle estilos en css -->
+                <!-- En la web de FONT AWESOME, copio el código que va entre las etiquetas de button
+                para que se cargue el icono -->
+                <button id="btn-cerrar-popup"><i class="fas fa-times-circle"></i></button>
+                <img src="" alt="">
             </div>
             <p class="descripcion">
                 <!-- En esta descripción puedo incluir más elementos
@@ -117,8 +123,7 @@
                 Lorem ipsum, dolor sit amet consectetur 
                 adipisicing elit. Totam enim error, 
                 ad cumque distinctio quia minus soluta animi 
-                fugit doloribus iste ea. Sed, enim dolore 
-                molestiae dolor quia sapiente blanditiis!</p>
+                fugit doloribus iste ea.</p>
 
         </section>
     </div>
