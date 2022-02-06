@@ -161,6 +161,7 @@ header .categorias a.activo {
     por encima de la imagen */
     cursor: pointer;
     vertical-align: top;
+    border-radius: 10px;
 }
 
 /* -------------------------------------------
@@ -201,9 +202,10 @@ header .categorias a.activo {
     display: flex;
 }
 
-.overlay imag {
+.overlay img {
     /* Para que tome una medidad del ancho máximo del contenedor */
-    max-width: 100%;
+    max-width: 80%;
+    border-radius: 10px;
 }
 
 .overlay .descripcion {
@@ -214,11 +216,12 @@ header .categorias a.activo {
     margin-top: 5px;
     border-radius: 10px;
     max-width: 50%;
-
 }
 
 .contenedor-img {
     position: relative;
+    text-align: center;
+    display: block;
 }
 
 .overlay #btn-cerrar-popup {
@@ -235,7 +238,7 @@ header .categorias a.activo {
     position: absolute;
     /* Para ubicar el botón arriba hacia la derecha y 
     por fuera de la imagen (por fuera del contenedor)*/
-    right: -20px;
+    right: 20px;
     top: -20px;
 }
 
